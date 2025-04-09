@@ -1,0 +1,53 @@
+<!-- Guardar como /images/hero-image.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <style>
+    .st0{fill:#4C6EF5;}
+    .st1{fill:#FF922B;}
+    .st2{fill:#F8F9FA;}
+    .st3{fill:#E9ECEF;}
+    .st4{fill:#212529;}
+    .st5{font-family:'Arial';}
+    .st6{font-size:12px;}
+    .st7{fill:none;stroke:#212529;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  </style>
+  
+  <!-- Background elements -->
+  <rect x="50" y="50" width="500" height="300" rx="15" class="st3"/>
+  
+  <!-- IA generating course illustration -->
+  <rect x="80" y="80" width="250" height="240" rx="10" class="st0" opacity="0.9"/>
+  <circle cx="150" cy="140" r="30" class="st1"/>
+  <path d="M150 120 L150 160 M130 140 L170 140" stroke="white" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Arrows flowing -->
+  <path d="M190 140 C220 140, 230 100, 260 100" class="st7"/>
+  <path d="M190 140 C220 140, 230 140, 260 140" class="st7"/>
+  <path d="M190 140 C220 140, 230 180, 260 180" class="st7"/>
+  
+  <!-- Course modules -->
+  <rect x="280" y="80" width="200" height="60" rx="5" class="st2"/>
+  <rect x="280" y="150" width="200" height="60" rx="5" class="st2"/>
+  <rect x="280" y="220" width="200" height="60" rx="5" class="st2"/>
+  
+  <!-- Module content -->
+  <rect x="290" y="95" width="180" height="10" rx="2" class="st4" opacity="0.7"/>
+  <rect x="290" y="115" width="100" height="10" rx="2" class="st4" opacity="0.4"/>
+  
+  <rect x="290" y="165" width="180" height="10" rx="2" class="st4" opacity="0.7"/>
+  <rect x="290" y="185" width="100" height="10" rx="2" class="st4" opacity="0.4"/>
+  
+  <rect x="290" y="235" width="180" height="10" rx="2" class="st4" opacity="0.7"/>
+  <rect x="290" y="255" width="100" height="10" rx="2" class="st4" opacity="0.4"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="500" cy="80" r="15" class="st1" opacity="0.6"/>
+  <circle cx="80" cy="320" r="10" class="st0" opacity="0.6"/>
+  <circle cx="520" cy="280" r="20" class="st0" opacity="0.4"/>
+  
+  <!-- AI brain visualization -->
+  <g transform="translate(130, 180) scale(0.7)">
+    <path d="M30,60 C30,60 70,40 110,60 C110,60 70,80 30,60 Z" class="st1" opacity="0.8"/>
+    <path d="M30,60 C30,60 70,80 110,60 C110,60 70,100 30,60 Z" class="st0" opacity="0.8"/>
+    <circle cx="70" cy="70" r="15" fill="white" opacity="0.6"/>
+  </g>
+</svg>

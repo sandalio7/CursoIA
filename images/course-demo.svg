@@ -1,0 +1,69 @@
+<!-- Guardar como /images/course-demo.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <style>
+    .st0{fill:#FFFFFF;}
+    .st1{fill:#4C6EF5;}
+    .st2{fill:#FF922B;}
+    .st3{fill:#F8F9FA;}
+    .st4{fill:#E9ECEF;}
+    .st5{fill:#212529;}
+    .st6{font-family:'Arial';}
+    .st7{font-size:12px;}
+    .st8{fill:none;stroke:#212529;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  </style>
+  
+  <!-- Main course container -->
+  <rect x="50" y="20" width="500" height="360" rx="8" class="st0" stroke="#E9ECEF" stroke-width="2"/>
+  
+  <!-- Course header -->
+  <rect x="50" y="20" width="500" height="50" rx="8 8 0 0" class="st1"/>
+  <text x="80" y="50" class="st6" fill="white" font-weight="bold" font-size="18">Curso: Introducción a Python</text>
+  
+  <!-- Course sidebar -->
+  <rect x="50" y="70" width="120" height="310" fill="#F8F9FA"/>
+  
+  <!-- Sidebar modules -->
+  <rect x="60" y="90" width="100" height="30" rx="4" class="st1" opacity="0.9"/>
+  <text x="70" y="110" class="st6" fill="white" font-size="12">Módulo 1</text>
+  
+  <rect x="60" y="130" width="100" height="30" rx="4" class="st4"/>
+  <text x="70" y="150" class="st6" fill="#212529" font-size="12">Módulo 2</text>
+  
+  <rect x="60" y="170" width="100" height="30" rx="4" class="st4"/>
+  <text x="70" y="190" class="st6" fill="#212529" font-size="12">Módulo 3</text>
+  
+  <rect x="60" y="210" width="100" height="30" rx="4" class="st4"/>
+  <text x="70" y="230" class="st6" fill="#212529" font-size="12">Módulo 4</text>
+  
+  <!-- Main content area -->
+  <rect x="180" y="80" width="360" height="290" rx="4" class="st0"/>
+  
+  <!-- Content header -->
+  <text x="200" y="110" class="st6" fill="#212529" font-weight="bold" font-size="16">Módulo 1: Fundamentos de Python</text>
+  
+  <!-- Section 1 -->
+  <rect x="200" y="130" width="320" height="1" fill="#E9ECEF"/>
+  <text x="200" y="150" class="st6" fill="#212529" font-weight="bold" font-size="14">1.1 Instalación y configuración</text>
+  <rect x="200" y="160" width="320" height="30" fill="#F8F9FA" rx="4"/>
+  <text x="210" y="180" class="st6" fill="#212529" font-size="12">Pasos para instalar Python y un editor de código</text>
+  
+  <!-- Section 2 -->
+  <text x="200" y="210" class="st6" fill="#212529" font-weight="bold" font-size="14">1.2 Variables y tipos de datos</text>
+  <rect x="200" y="220" width="320" height="30" fill="#F8F9FA" rx="4"/>
+  <text x="210" y="240" class="st6" fill="#212529" font-size="12">Strings, integers, floats y listas</text>
+  
+  <!-- Test section -->
+  <rect x="200" y="270" width="320" height="80" rx="4" class="st2" stroke="#4C6EF5" stroke-width="1"/>
+  <text x="220" y="290" class="st6" fill="#212529" font-weight="bold" font-size="14">Mini Test: Fundamentos de Python</text>
+  
+  <!-- Quiz options -->
+  <circle cx="220" cy="310" r="8" class="st4" stroke="#212529" stroke-width="1"/>
+  <text x="240" y="315" class="st6" fill="#212529" font-size="12">A) Opción multiple 1</text>
+  
+  <circle cx="220" cy="330" r="8" class="st1"/>
+  <text x="240" y="335" class="st6" fill="#212529" font-size="12">B) Opción multiple 2</text>
+  
+  <!-- Progress bar -->
+  <rect x="180" y="370" width="360" height="10" rx="5" class="st4"/>
+  <rect x="180" y="370" width="90" height="10" rx="5" class="st1"/>
+</svg>
