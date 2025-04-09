@@ -127,33 +127,79 @@ function saveInterestEmail() {
 }
 
 // Function to send data to serverless function
-// This would be replaced with actual fetch call in production
+// Function to send data to serverless function
 async function sendToServerless(data) {
-    // In a real implementation, you would uncomment the following code:
-    /*
     try {
-        const response = await fetch('/.netlify/functions/register-interest', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        
-        const result = await response.json();
-        console.log('Success:', result);
+      const response = await fetch('/.netlify/functions/register-interest', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      
+      const result = await response.json();
+      console.log('Success:', result);
+      return true;
     } catch (error) {
-        console.error('Error:', error);
+      console.error('Error:', error);
+      alert('Hubo un problema al enviar tu información. Por favor intenta nuevamente.');
+      return false;
     }
-    */
+  }
+  
+  // Save interest email
+  function saveInterestEmail() {
+    const email = document.getElementById('interest-email').value;
     
-    // For now, just log the data
-    console.log('Data that would be sent to serverless function:', data);
-}
+    if (!email) {
+      alert('Por favor, introduce tu email para mantenerte informado.');
+      return;
+    }
+    
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Por favor, introduce un email válido.');
+      return;
+    }
+    
+    // Send to serverless function
+    sendToServerless({ email, type: 'interest' }).then(success => {
+      if (success) {
+        // Close modal
+        closeInterestModal();
+        
+        // Show thank you message
+        alert('¡Gracias! Te mantendremos informado sobre el lanzamiento de CursoIA.');
+      }
+    });
+  }
+  
+  // Handle early access form submission
+  function handleEarlyAccessSubmit(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const interest = document.getElementById('interest').value;
+    
+    // Send to serverless function
+    sendToServerless({ name, email, interest, type: 'early-access' }).then(success => {
+      if (success) {
+        // Reset form and close modal
+        document.getElementById('early-access-form').reset();
+        closeModal();
+        
+        // Show thank you message
+        alert('¡Gracias por tu interés! Te contactaremos pronto con más información sobre el acceso anticipado.');
+      }
+    });
+  }
 
 // Animation on scroll
 window.addEventListener('scroll', () => {

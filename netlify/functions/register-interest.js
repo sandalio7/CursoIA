@@ -1,30 +1,25 @@
-// Guardar en /netlify/functions/register-interest.js
 const { createClient } = require('@supabase/supabase-js');
+const sgMail = require('@sendgrid/mail');
 
-// Inicializar cliente de Supabase (necesitarás configurar estas variables de entorno en Netlify)
-// Si prefieres usar otro servicio como Airtable, Firebase, etc. puedes modificar este código
+// Inicializar Supabase
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Configuración para envío de emails (usando Mailgun como ejemplo)
-const mailgun = require('mailgun-js')({
-  apiKey: process.env.MAILGUN_API_KEY,
-  domain: process.env.MAILGUN_DOMAIN
-});
+// Inicializar SendGrid
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-// Función principal que maneja solicitudes
 exports.handler = async (event, context) => {
-  // Asegurar que el método es POST
+  // Solo acepta POST
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Método no permitido' };
   }
 
   try {
-    // Parsear el cuerpo de la solicitud
+    // Parsear datos
     const data = JSON.parse(event.body);
     
-    // Validar datos
+    // Validar datos mínimos
     if (data.type === 'early-access' && (!data.name || !data.email)) {
       return {
         statusCode: 400,
@@ -37,7 +32,7 @@ exports.handler = async (event, context) => {
       };
     }
 
-    // Almacenar en Supabase según el tipo de solicitud
+    // Guardar en Supabase
     let result;
     if (data.type === 'early-access') {
       result = await supabase
@@ -61,7 +56,7 @@ exports.handler = async (event, context) => {
         ]);
     }
 
-    // Verificar si hubo error en Supabase
+    // Verificar errores de Supabase
     if (result.error) {
       console.error('Error de Supabase:', result.error);
       return {
@@ -70,36 +65,35 @@ exports.handler = async (event, context) => {
       };
     }
 
-    // Enviar email de confirmación
-    let messageData;
+    // Preparar emails
+    let userMessage;
     if (data.type === 'early-access') {
-      messageData = {
-        from: 'CursoIA <info@tudominio.com>',
+      userMessage = {
         to: data.email,
+        from: process.env.SENDER_EMAIL,
         subject: '¡Gracias por solicitar acceso anticipado a CursoIA!',
         text: `Hola ${data.name},\n\nGracias por solicitar acceso anticipado a CursoIA. Te notificaremos tan pronto como esté disponible.\n\nSaludos,\nEl equipo de CursoIA`
       };
     } else {
-      messageData = {
-        from: 'CursoIA <info@tudominio.com>',
+      userMessage = {
         to: data.email,
+        from: process.env.SENDER_EMAIL,
         subject: '¡Gracias por tu interés en CursoIA!',
         text: 'Gracias por mostrar interés en CursoIA. Te mantendremos informado sobre nuestro lanzamiento.\n\nSaludos,\nEl equipo de CursoIA'
       };
     }
 
-    // Enviar email a administrador para seguimiento
-    const adminData = {
-      from: 'Notificación CursoIA <info@tudominio.com>',
+    const adminMessage = {
       to: process.env.ADMIN_EMAIL,
+      from: process.env.SENDER_EMAIL,
       subject: `Nuevo registro en CursoIA: ${data.type}`,
       text: `Se ha registrado un nuevo interesado:\n\nTipo: ${data.type}\nEmail: ${data.email}${data.name ? `\nNombre: ${data.name}` : ''}${data.interest ? `\nInterés: ${data.interest}` : ''}`
     };
 
     // Enviar emails
     try {
-      await mailgun.messages().send(messageData);
-      await mailgun.messages().send(adminData);
+      await sgMail.send(userMessage);
+      await sgMail.send(adminMessage);
     } catch (emailError) {
       console.error('Error al enviar email:', emailError);
       // Continuamos aunque falle el envío de email

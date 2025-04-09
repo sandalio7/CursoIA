@@ -1,0 +1,8 @@
+{
+    "name": "cursoia-landing",
+    "version": "1.0.0",
+    "dependencies": {
+      "@supabase/supabase-js": "^2.38.4",
+      "@sendgrid/mail": "^7.7.0"
+    }
+  }
