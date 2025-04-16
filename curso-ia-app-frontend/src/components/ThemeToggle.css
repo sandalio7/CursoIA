@@ -1,0 +1,33 @@
+.theme-toggle-btn {
+    background: transparent;
+    border: none;
+    color: var(--primary, #ffc0ad);
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .theme-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: rotate(15deg);
+  }
+  
+  .theme-toggle-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 192, 173, 0.5);
+  }
+  
+  .theme-toggle-btn i {
+    transition: transform 0.3s ease;
+  }
+  
+  .theme-toggle-btn:hover i {
+    transform: scale(1.2);
+  }

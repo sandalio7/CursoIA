@@ -1,0 +1,96 @@
+.navbar {
+    background-color: var(--dark-background);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand {
+    color: var(--primary);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  
+  .nav-link {
+    color: var(--text-primary);
+    padding: 0.7rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    color: var(--primary);
+    background-color: rgba(249, 188, 96, 0.1);
+  }
+  
+  .nav-link i {
+    font-size: 1.1rem;
+  }
+  
+  .theme-toggle-btn {
+    color: var(--primary);
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+  }
+  
+  .theme-toggle-btn:hover {
+    background-color: rgba(249, 188, 96, 0.1);
+    transform: rotate(15deg);
+  }
+  
+  .user-dropdown-toggle {
+    color: var(--text-primary);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .user-dropdown-toggle:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+  
+  .dropdown-menu {
+    background-color: var(--card-background);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dropdown-item {
+    color: var(--text-primary);
+  }
+  
+  .dropdown-item:hover {
+    background-color: rgba(249, 188, 96, 0.1);
+    color: var(--primary);
+  }
+  
+  .dropdown-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .sidebar-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  .sidebar-toggle:focus {
+    box-shadow: none;
+  }
+  
+  /* Navbar toggler icon customization */
+  .navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.7)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }

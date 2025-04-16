@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Importar los estilos de tema oscuro */
+@import './styles/themes.css';
+/* Importar componentes específicos */
+@import './styles/components.css';

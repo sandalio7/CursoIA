@@ -1,0 +1,142 @@
+/* continuación de src/pages/History.css */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--card-border);
+    left: 30px;
+    margin-left: -1px;
+  }
+  
+  .activity-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 80px;
+    min-height: 60px;
+  }
+  
+  .activity-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    left: 20px;
+    top: 10px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+  }
+  
+  .activity-creation {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .activity-completion {
+    background-color: #9fef00;
+    color: #1a2332;
+  }
+  
+  .activity-quiz {
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  .activity-project {
+    background-color: #ffc107;
+    color: #1a2332;
+  }
+  
+  .activity-content {
+    padding: 15px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .activity-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .activity-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  
+  .activity-time {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+  
+  .activity-details {
+    margin: 0;
+    color: var(--text-secondary);
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    margin-top: 30px;
+  }
+  
+  .empty-state i {
+    font-size: 4rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+  }
+  
+  .loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+  }
+  
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--card-border);
+    border-top: 3px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @media (max-width: 768px) {
+    .activity-item {
+      padding-left: 60px;
+    }
+    
+    .timeline:before {
+      left: 20px;
+    }
+    
+    .activity-icon {
+      left: 10px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 0.8rem;
+    }
+  }

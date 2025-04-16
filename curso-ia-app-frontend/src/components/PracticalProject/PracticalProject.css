@@ -1,0 +1,279 @@
+/* Estilos para el componente PracticalProject - Compatible con tema oscuro */
+
+/* Contenedor principal */
+.project-container {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 1rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Contenedor cuando no hay proyecto */
+  .project-empty-container {
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .project-empty {
+    opacity: 0.7;
+  }
+  
+  .project-empty-icon {
+    font-size: 3rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+  
+  /* Header del proyecto */
+  .project-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .project-title {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Barra de progreso */
+  .project-progress {
+    height: 4px;
+    background-color: var(--bg-tertiary);
+    position: relative;
+  }
+  
+  .project-progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+  }
+  
+  /* Navegación entre secciones */
+  .project-navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background-color: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .project-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    color: var(--text-secondary);
+    transition: all 0.2s ease;
+    flex: 1;
+    min-width: 80px;
+  }
+  
+  .project-nav-item:hover {
+    color: var(--text-primary);
+  }
+  
+  .project-nav-item.active {
+    color: var(--primary-color);
+  }
+  
+  .project-nav-icon {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-nav-text {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  
+  .project-nav-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    position: absolute;
+    bottom: -0.75rem;
+  }
+  
+  .project-nav-indicator.completed {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+  
+  /* Contenido de la sección */
+  .project-content {
+    padding: 2rem 1.5rem;
+    min-height: 300px;
+  }
+  
+  .project-section-title {
+    margin-bottom: 1.5rem;
+  }
+  
+  .project-section-title h3 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .project-section-content {
+    color: var(--text-primary);
+    line-height: 1.6;
+  }
+  
+  .project-section-content h1,
+  .project-section-content h2,
+  .project-section-content h3,
+  .project-section-content h4,
+  .project-section-content h5,
+  .project-section-content h6 {
+    color: var(--text-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-section-content p {
+    margin-bottom: 1rem;
+  }
+  
+  .project-section-content ul,
+  .project-section-content ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+  
+  .project-section-content li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-section-content code {
+    background-color: var(--bg-tertiary);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.9em;
+  }
+  
+  .project-section-content pre {
+    background-color: var(--bg-tertiary);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+  }
+  
+  .project-section-content pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  .project-section-content blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: var(--text-secondary);
+  }
+  
+  /* Footer con botones de navegación */
+  .project-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background-color: var(--bg-tertiary);
+    border-top: 1px solid var(--border-color);
+  }
+  
+  /* Botones */
+  .project-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+  }
+  
+  .project-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .project-btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .project-btn-primary:hover:not(:disabled) {
+    background-color: var(--primary-dark);
+  }
+  
+  .project-btn-secondary {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+  }
+  
+  .project-btn-secondary:hover:not(:disabled) {
+    background-color: var(--bg-hover);
+  }
+  
+  .project-btn-success {
+    background-color: var(--success-color);
+    color: white;
+  }
+  
+  .project-btn-success:hover:not(:disabled) {
+    background-color: var(--success-dark);
+  }
+  
+  /* Utilidades */
+  .mr-2 {
+    margin-right: 0.5rem;
+  }
+  
+  .ml-2 {
+    margin-left: 0.5rem;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .project-navigation {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    .project-nav-item {
+      min-width: calc(50% - 0.5rem);
+      padding: 0.75rem 0.5rem;
+    }
+    
+    .project-footer {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .project-btn {
+      width: 100%;
+    }
+  }

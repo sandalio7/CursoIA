@@ -1,0 +1,200 @@
+:root {
+  /* Tema oscuro - basado en la paleta chocolate */
+  --dark-background: #55423d; /* Fondo principal chocolate */
+  --dark-card-background: #55423d; /* Fondo de las tarjetas */
+  --dark-surface: #271c19; /* Superficie secundaria más oscura */
+  --dark-primary: #ffc0ad; /* Color primario/acento (salmon claro) */
+  --dark-secondary: #ffc0ad; /* Color secundario */
+  --dark-tertiary: #e78fb3; /* Color terciario (rosa) */
+  --dark-text-primary: #fffffe; /* Texto principal (blanco) */
+  --dark-text-secondary: #271c19; /* Texto secundario (chocolate oscuro) */
+  --dark-headline: #fffffe; /* Titulares */
+  --dark-paragraph: #fff3ec; /* Texto de párrafos */
+  --dark-stroke: #271c19; /* Contornos y divisores */
+  --dark-highlight: #e78fb3; /* Resaltados */
+  --dark-card-paragraph: #fff3ec; /* Texto en tarjetas */
+  --dark-card-headline: #fffffe; /* Títulos en tarjetas */
+  --dark-card-tag-bg: #271c19; /* Fondo de etiquetas en tarjetas */
+  --dark-card-tag-text: #fff3ec; /* Texto de etiquetas en tarjetas */
+  --dark-card-highlight: #e78fb3; /* Resaltado en tarjetas */
+  
+  /* Tema claro - invertimos algunos colores para buen contraste */
+  --light-background: #fffffe; /* Fondo principal claro */
+  --light-card-background: #fff3ec; /* Fondo de las tarjetas */
+  --light-surface: #ffc0ad; /* Superficie secundaria */
+  --light-primary: #55423d; /* Color primario/acento (chocolate) */
+  --light-secondary: #e78fb3; /* Color secundario (rosa) */
+  --light-tertiary: #ffc0ad; /* Color terciario (salmon) */
+  --light-text-primary: #271c19; /* Texto principal (chocolate oscuro) */
+  --light-text-secondary: #55423d; /* Texto secundario */
+  --light-headline: #271c19; /* Titulares */
+  --light-paragraph: #55423d; /* Texto de párrafos */
+  --light-stroke: #ffc0ad; /* Contornos y divisores */
+  --light-highlight: #e78fb3; /* Resaltados */
+  --light-card-paragraph: #55423d; /* Texto en tarjetas */
+  --light-card-headline: #271c19; /* Títulos en tarjetas */
+  --light-card-tag-bg: #fff3ec; /* Fondo de etiquetas en tarjetas */
+  --light-card-tag-text: #271c19; /* Texto de etiquetas en tarjetas */
+  --light-card-highlight: #e78fb3; /* Resaltado en tarjetas */
+}
+
+/* Aplicamos las variables según el tema */
+body {
+  /* Por defecto, usar tema oscuro */
+  background-color: var(--dark-background);
+  color: var(--dark-text-primary);
+}
+
+/* Tema oscuro */
+.dark-theme {
+  --background: var(--dark-background);
+  --card-background: var(--dark-card-background);
+  --surface: var(--dark-surface);
+  --primary: var(--dark-primary);
+  --secondary: var(--dark-secondary);
+  --tertiary: var(--dark-tertiary);
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --headline: var(--dark-headline);
+  --paragraph: var(--dark-paragraph);
+  --stroke: var(--dark-stroke);
+  --highlight: var(--dark-highlight);
+  --card-paragraph: var(--dark-card-paragraph);
+  --card-headline: var(--dark-headline);
+  --card-tag-bg: var(--dark-card-tag-bg);
+  --card-tag-text: var(--dark-card-tag-text);
+  --card-highlight: var(--dark-card-highlight);
+}
+
+/* Tema claro */
+.light-theme {
+  --background: var(--light-background);
+  --card-background: var(--light-card-background);
+  --surface: var(--light-surface);
+  --primary: var(--light-primary);
+  --secondary: var(--light-secondary);
+  --tertiary: var(--light-tertiary);
+  --text-primary: var(--light-text-primary);
+  --text-secondary: var(--light-text-secondary);
+  --headline: var(--light-headline);
+  --paragraph: var(--light-paragraph);
+  --stroke: var(--light-stroke);
+  --highlight: var(--light-highlight);
+  --card-paragraph: var(--light-card-paragraph);
+  --card-headline: var(--light-card-headline);
+  --card-tag-bg: var(--light-card-tag-bg);
+  --card-tag-text: var(--light-card-tag-text);
+  --card-highlight: var(--light-card-highlight);
+}
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--headline);
+  }
+  
+  p {
+    color: var(--paragraph);
+  }
+  
+  /* Estilos para cards */
+  .card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    color: var(--card-headline);
+  }
+  
+  .card-text {
+    color: var(--card-paragraph);
+  }
+  
+  /* Estilos para botones */
+  .btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: var(--dark-text-secondary);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--highlight);
+    border-color: var(--highlight);
+    color: var(--dark-text-secondary);
+  }
+  
+  .btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--text-primary);
+  }
+  
+  .btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: var(--dark-text-secondary);
+  }
+  
+  /* Enlaces */
+  a {
+    color: var(--primary);
+    transition: color 0.2s ease;
+  }
+  
+  a:hover {
+    color: var(--highlight);
+    text-decoration: none;
+  }
+  
+  /* Navbar personalizado */
+  .navbar {
+    background-color: var(--dark-background);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sidebar personalizado */
+  .sidebar {
+    background-color: var(--dark-background);
+    min-height: 100vh;
+  }
+  
+  /* Estilos para elementos de formulario */
+  .form-control {
+    background-color: var(--surface);
+    border-color: var(--stroke);
+    color: var(--text-primary);
+  }
+  
+  .form-control:focus {
+    background-color: var(--surface);
+    color: var(--text-primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(249, 188, 96, 0.25);
+  }
+  
+  /* Estilos para áreas de contenido */
+  .content-area {
+    background-color: var(--background);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  
+  /* Ajustes para elementos interactivos */
+  .nav-link {
+    color: var(--text-primary);
+  }
+  
+  .nav-link:hover, .nav-link.active {
+    color: var(--primary);
+  }
