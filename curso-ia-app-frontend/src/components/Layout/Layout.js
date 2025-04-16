@@ -1,41 +1,45 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import Navbar from './Navbar';
+import React, { useState, useEffect } from 'react';
 import Sidebar from './Sidebar';
 import './Layout.css';
+
 const Layout = ({ children }) => {
-  const [sidebarOpen, setSidebarOpen] = useState(true);
-  const location = useLocation();
-  
-  // No mostrar el sidebar en la página de creación de curso o en la página de inicio
-  const isHomePage = location.pathname === '/' || location.pathname === '/home';
-  const shouldShowSidebar = !isHomePage && !location.pathname.includes('/create') && !location.pathname.includes('/login') && !location.pathname.includes('/register');
-  
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [sidebarVisible, setSidebarVisible] = useState(true);
+
+  // Detectar cambios de tamaño de pantalla para modo responsive
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  // Función para alternar la visibilidad del sidebar
   const toggleSidebar = () => {
-    setSidebarOpen(!sidebarOpen);
+    setSidebarVisible(!sidebarVisible);
   };
-  
-  // Si es la página principal, no aplicar el layout
-  if (isHomePage) {
-    return children;
-  }
-  
+
   return (
-    <div className="app-container">
-      <Navbar toggleSidebar={toggleSidebar} />
-      
-      <div className="main-container">
-        {shouldShowSidebar && (
-          <div className={`sidebar-container ${sidebarOpen ? 'open' : 'closed'}`}>
-            <Sidebar />
-          </div>
-        )}
-        
-        <div className={`content-container ${shouldShowSidebar && sidebarOpen ? 'with-sidebar' : 'full-width'}`}>
-          {children}
-        </div>
+    <div className="layout-container">
+      <Sidebar 
+        compact={isMobile} 
+        visible={sidebarVisible} 
+      />
+      <div 
+        className={`sidebar-toggle ${!sidebarVisible ? 'sidebar-hidden' : ''}`} 
+        onClick={toggleSidebar}
+      >
+        {sidebarVisible ? '◀' : '▶'}
       </div>
+      <main className={`layout-main ${!sidebarVisible ? 'sidebar-hidden' : ''}`}>
+        {children}
+      </main>
     </div>
   );
 };
+
 export default Layout;

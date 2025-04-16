@@ -1,0 +1,247 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    height: 100vh;
+    background-color: var(--bg-sidebar);
+    color: var(--text-light);
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+    transition: all var(--transition-speed) ease;
+    z-index: 1000;
+  }
+  
+  .sidebar-compact {
+    width: 60px;
+  }
+  
+  .sidebar-hidden {
+    left: -240px;
+  }
+  
+  .sidebar-compact.sidebar-hidden {
+    left: -60px;
+  }
+  
+  .sidebar-header {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .sidebar-title {
+    color: var(--text-light);
+    font-size: 1.75rem;
+    margin: 0;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .sidebar-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar-new-course {
+    padding: 0 1rem 1rem 1rem;
+  }
+  
+  .new-course-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .new-course-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-color);
+    color: var(--text-button);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+    text-decoration: none;
+    transition: transform var(--transition-speed) ease;
+  }
+  
+  .new-course-circle:hover {
+    transform: scale(1.1);
+  }
+  
+  .new-course-text {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: opacity var(--transition-speed) ease;
+  }
+  
+  .new-course-text:hover {
+    opacity: 0.9;
+  }
+  
+  .sidebar-nav {
+    padding: 0 1rem;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-menu-item {
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebar-menu-item a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-light);
+    transition: background-color var(--transition-speed) ease;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .sidebar-menu-item a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar-menu-item.active a {
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+  }
+  
+  .menu-icon {
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  
+  .sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid var(--border-light);
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: var(--text-button);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.75rem;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .user-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+  
+  .user-plan {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+  }
+  
+  .theme-toggle {
+    display: flex;
+    justify-content: center;
+    padding-top: 0.5rem;
+  }
+  
+  .theme-toggle-btn {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid var(--border-light);
+    border-radius: 20px;
+    padding: 0.4rem 0.75rem;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+  }
+  
+  .theme-toggle-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .toggle-text {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  /* Media query para compactar el sidebar en móviles */
+  @media (max-width: 768px) {
+    .sidebar-compact .sidebar-title,
+    .sidebar-compact .btn-text,
+    .sidebar-compact .menu-text,
+    .sidebar-compact .user-info,
+    .sidebar-compact .toggle-text {
+      display: none;
+    }
+    
+    .sidebar-compact .sidebar-new-course {
+      padding: 0.5rem;
+    }
+    
+    .sidebar-compact .new-course-button {
+      padding: 0.5rem;
+      justify-content: center;
+    }
+    
+    .sidebar-compact .btn-icon {
+      margin-right: 0;
+    }
+    
+    .sidebar-compact .sidebar-menu-item a {
+      justify-content: center;
+      padding: 0.75rem;
+    }
+    
+    .sidebar-compact .menu-icon {
+      margin-right: 0;
+      font-size: 1.3rem;
+    }
+    
+    .sidebar-compact .user-avatar {
+      margin: 0 auto;
+    }
+    
+    .sidebar-compact .user-profile {
+      justify-content: center;
+    }
+    
+    .sidebar-compact .theme-toggle-btn {
+      padding: 0.4rem;
+      justify-content: center;
+    }
+  }

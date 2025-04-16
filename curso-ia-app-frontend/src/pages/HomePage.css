@@ -1,352 +1,183 @@
-/* Estilos para la página de inicio con tema oscuro chocolate */
-.homepage-container {
-    min-height: 100vh;
-    background-color: #55423d; /* Color de fondo chocolate */
-    color: #fff3ec; /* Color de texto claro */
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-  
-  /* Navbar */
-  .home-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #55423d; /* Mismo que el fondo */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .home-navbar.visible {
-    transform: translateY(0);
-  }
-  
-  .home-navbar.hidden {
-    transform: translateY(-100%);
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  
-  .navbar-logo a {
-    color: #fff3ec; /* Color de texto para el logo */
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 1.5rem;
-  }
-  
-  .navbar-links a {
-    color: #fff3ec; /* Color de texto para los enlaces */
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-  
-  .navbar-links a:hover {
-    color: #ffc0ad; /* Color secundario para hover */
-  }
-  
-  .navbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .btn {
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    border: none;
-  }
-  
-  .btn-upgrade {
-    background-color: #ffc0ad; /* Color de botón */
-    color: #271c19; /* Color de texto oscuro */
-  }
-  
-  .btn-upgrade:hover {
-    background-color: #e78fb3; /* Color terciario para hover */
-  }
-  
-  .user-menu {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-  }
-  
-  .user-icon {
-    font-size: 1.2rem;
-  }
-  
-  .user-name {
-    font-weight: 500;
-  }
-  
-  /* Contenido principal */
-  .homepage-content {
-    display: flex;
-    min-height: 100vh;
-    padding-top: 70px; /* Espacio para el navbar */
-  }
-  
-  /* Sección del héroe (izquierda) */
-  .hero-section {
-    flex: 1.5; /* Aumentado para que ocupe más espacio */
-    padding: 4rem 3rem;
-    display: flex;
+/* Estilos específicos para la página de inicio con soporte para tema oscuro */
+.home-page {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+}
+
+.curso-header {
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.curso-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-title);
+}
+
+.home-content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 2rem 2rem;
+  gap: 2rem;
+}
+
+/* Sección de introducción */
+.intro-section {
+  flex: 1;
+  min-width: 300px;
+  padding: 2rem 0;
+}
+
+.intro-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  color: var(--text-title);
+}
+
+.intro-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.intro-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.intro-features li {
+  display: flex;
+  align-items: flex-start; /* Alinea al inicio para mejor alineación */
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.feature-text {
+  flex: 1;
+  padding-top: 2px; /* Alinea verticalmente con el ícono */
+}
+
+.check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px; /* Asegura que no se deforme */
+  min-height: 24px; /* Asegura que no se deforme */
+  background-color: var(--accent-color);
+  color: var(--text-button);
+  border-radius: 50%;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+/* Sección del formulario */
+.form-section {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 0;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--bg-card);
+  border-radius: 0;  /* Bordes rectos */
+  box-shadow: none;  /* Sin sombra */
+  padding: 2rem;
+}
+
+.form-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: var(--text-title);
+}
+
+.form-label {
+  color: var(--text-title);
+}
+
+.form-control {
+  background-color: #fff;
+  color: #333;
+  border-color: var(--border-light);
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--text-button);
+  border: none;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Opciones adicionales */
+.additional-options {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-left: 3px solid var(--accent-color);
+}
+
+.dark-theme .additional-options {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Media queries para responsive */
+@media (max-width: 992px) {
+  .home-content {
     flex-direction: column;
-    justify-content: center;
   }
   
-  .hero-title {
-    font-size: 4rem; /* Tamaño aumentado */
-    line-height: 1.1;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-    color: #fffffe; /* Color de título */
+  .intro-title {
+    font-size: 2.5rem;
   }
-  
-  .hero-subtitle {
-    font-size: 1.8rem; /* Tamaño aumentado */
-    margin-bottom: 2.5rem;
-    color: #fff3ec; /* Color de párrafo */
-  }
-  
-  .hero-features {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 2.5rem;
-  }
-  
-  .hero-features li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem; /* Tamaño aumentado */
-  }
-  
-  .hero-features li i {
-    color: #e78fb3; /* Color de los iconos */
-    margin-right: 0.75rem;
-    font-size: 1.4rem;
-  }
-  
-  .check-circle {
-    color: #e78fb3; /* Color de los iconos */
-    margin-right: 0.75rem;
-    font-size: 1.4rem;
-  }
-  
-  .btn-cta {
-    background-color: #ffc0ad; /* Color de botón */
-    color: #271c19; /* Color de texto */
-    font-size: 1.2rem;
-    padding: 0.75rem 1.5rem;
-    align-self: flex-start;
-  }
-  
-  .btn-cta:hover {
-    background-color: #e78fb3; /* Color terciario para hover */
-  }
-  
-  /* Sección del formulario (derecha) */
-  .course-form-section {
-    flex: 1;
-    padding: 4rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #55423d;
-  }
-  
-  .course-form-container {
-    width: 100%;
-    max-width: 500px;
-    background-color: #271c19; /* Color más oscuro para el fondo de la tarjeta */
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    padding: 2rem;
-  }
-  
-  /* Nuevo estilo para la tarjeta con fondo rosa */
-  .course-form-pink {
-    background-color: #ffc0ad; /* Fondo rosa */
-    color: #271c19; /* Texto oscuro para mejor contraste */
-  }
-  
-  .form-title {
+}
+
+@media (max-width: 768px) {
+  .curso-header h1 {
     font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: #fffffe; /* Color de título */
-    text-align: center;
   }
   
-  /* Ajustar el color del título para la tarjeta rosa */
-  .course-form-pink .form-title {
-    color: #271c19;
+  .intro-title {
+    font-size: 2rem;
   }
   
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-    color: #fff3ec;
-  }
-  
-  /* Ajustar el color de las etiquetas para la tarjeta rosa */
-  .course-form-pink .form-group label {
-    color: #271c19;
-  }
-  
-  .form-input {
-    width: 100%;
-    padding: 0.75rem;
-    border-radius: 6px;
-    border: 1px solid transparent; /* Borde invisible */
-    background-color: #fffffe; /* Fondo blanco para inputs */
-    color: #271c19; /* Color de texto oscuro para mejor contraste */
-    font-size: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box; /* Asegurar que el padding se incluya en el ancho */
-  }
-  
-  .form-input:focus {
-    outline: none;
-    border-color: #e78fb3; /* Color terciario para focus */
-    box-shadow: 0 0 0 2px rgba(231, 143, 179, 0.3);
-  }
-  
-  .form-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .form-checkbox input[type="checkbox"] {
-    margin: 0;
-    transform: scale(1.2);
-  }
-  
-  .form-checkbox label {
-    margin-bottom: 0;
-    cursor: pointer;
-  }
-  
-  .additional-options {
-    background-color: rgba(255, 255, 255, 0.15); /* Fondo semi-transparente */
-    border-radius: 8px;
+  .form-card {
     padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-left: 3px solid #e78fb3; /* Color terciario */
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content {
+    padding: 0 1rem 2rem;
   }
   
-  .course-form-pink .additional-options {
-    background-color: rgba(39, 28, 25, 0.1); /* Fondo semi-transparente oscuro */
-    border-left: 3px solid #271c19; /* Borde oscuro */
+  .intro-title {
+    font-size: 1.75rem;
   }
   
-  .btn-submit {
-    width: 100%;
-    background-color: #e78fb3; /* Color fucsia */
-    color: #fff; /* Color de texto blanco */
-    font-size: 1.1rem;
-    padding: 0.75rem;
-    margin-top: 1rem;
+  .intro-subtitle {
+    font-size: 1rem;
   }
   
-  .btn-submit:hover {
-    background-color: #d67ba0; /* Color fucsia más oscuro para hover */
+  .form-card {
+    padding: 1.25rem;
   }
-  
-  .btn-submit:disabled {
-    background-color: #aaa;
-    color: #ffffff;
-    cursor: not-allowed;
-    opacity: 0.7;
-  }
-  
-  /* Responsive */
-  @media (max-width: 992px) {
-    .homepage-content {
-      flex-direction: column;
-    }
-    
-    .hero-section, 
-    .course-form-section {
-      padding: 2rem 1rem;
-    }
-    
-    .hero-title {
-      font-size: 2.5rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .navbar-container {
-      padding: 1rem;
-    }
-    
-    .navbar-links {
-      display: none;
-    }
-    
-    .user-name {
-      display: none;
-    }
-    
-    .hero-title {
-      font-size: 2rem;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.2rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .btn-upgrade {
-      display: none;
-    }
-    
-    .hero-section {
-      text-align: center;
-    }
-    
-    .hero-features li {
-      justify-content: center;
-    }
-    
-    .btn-cta {
-      align-self: center;
-    }
-  }
+}

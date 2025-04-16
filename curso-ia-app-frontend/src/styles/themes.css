@@ -1,170 +1,137 @@
-/* Temas para el Generador de Cursos con IA */
+/* 
+  Definición de temas para la aplicación CursoIA
+  Tema claro (default) y tema oscuro
+*/
 
-/* Variables de temas - Versión alternativa */
-:root {
-  /* Theme: HTB Academy */
-  --htb-bg-dark: #0a0f16;
-  --htb-text-dark: #ffffff;
-  --htb-primary-dark: #9fef00;
-  --htb-secondary-dark: #1a2332;
-  --htb-accent-dark: #9fef00;
-  --htb-card-bg-dark: #111927;
-  --htb-card-border-dark: #2a3544;
+/* Tema claro - valores por defecto */
+:root, .light-theme {
+  /* Colores primarios */
+  --color-title: #272343;      /* Azul oscuro para títulos */
+  --color-text: #2d334a;       /* Azul oscuro para párrafos */
+  --color-card-bg: #e3f6f5;    /* Celeste para fondo de la card */
+  --color-primary: #ffd803;    /* Amarillo para botones e iconos */
+  --color-sidebar: #272343;    /* Azul oscuro para sidebar */
+  --color-white: #ffffff;
+  --color-light-bg: #f8f9fa;
+  --color-border: rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
   
-  /* Theme: GitHub Dark */
-  --github-bg-dark: #0d1117;
-  --github-text-dark: #c9d1d9;
-  --github-primary-dark: #58a6ff;
-  --github-secondary-dark: #21262d;
-  --github-accent-dark: #3fb950;
-  --github-card-bg-dark: #161b22;
-  --github-card-border-dark: #30363d;
+  /* Variables de aplicación */
+  --bg-primary: var(--color-light-bg);
+  --bg-secondary: var(--color-white);
+  --bg-card: var(--color-card-bg);
+  --bg-sidebar: var(--color-sidebar);
   
-  /* Theme: Discord */
-  --discord-bg-dark: #36393f;
-  --discord-text-dark: #dcddde;
-  --discord-primary-dark: #5865f2;
-  --discord-secondary-dark: #2f3136;
-  --discord-accent-dark: #5865f2;
-  --discord-card-bg-dark: #42464d;
-  --discord-card-border-dark: #202225;
+  --text-primary: var(--color-text);
+  --text-title: var(--color-title);
+  --text-light: var(--color-white);
+  --text-button: var(--color-title);
   
-  /* Theme: VS Code */
-  --vscode-bg-dark: #1e1e1e;
-  --vscode-text-dark: #d4d4d4;
-  --vscode-primary-dark: #0078d7;
-  --vscode-secondary-dark: #252526;
-  --vscode-accent-dark: #0078d7;
-  --vscode-card-bg-dark: #2d2d2d;
-  --vscode-card-border-dark: #3e3e3e;
+  --border-light: var(--color-border);
   
-  /* Default theme (light mode) */
-  --bg-color: #f8f9fa;
-  --text-color: #212529;
-  --text-secondary: #6c757d;
-  --primary-color: #9fef00;
-  --secondary-color: #1a2332;
-  --accent-color: #9fef00;
-  --card-bg: #ffffff;
-  --card-border: #dee2e6;
-  --sidebar-bg: #ffffff;
-  --header-bg: #ffffff;
-  --input-bg: #ffffff;
-  --input-border: #ced4da;
-  --input-text: #495057;
-  --btn-primary-bg: #9fef00;
-  --btn-primary-text: #1a2332;
-  --btn-secondary-bg: #1a2332;
-  --btn-secondary-text: #ffffff;
-  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  --progress-bg: #e9ecef;
-  --success-color: #28a745;
-  --warning-color: #ffc107;
-  --danger-color: #dc3545;
-  --info-color: #17a2b8;
-  --code-bg: #f5f5f5;
-  --code-text: #24292e;
-  --hover-bg: #f0f0f0;
+  --accent-color: var(--color-primary);
+  
+  /* Transiciones */
+  --transition-speed: 0.2s;
 }
 
-/* HTB Academy Theme */
-.htb-theme {
-  --bg-color: var(--htb-bg-dark);
-  --text-color: var(--htb-text-dark);
-  --primary-color: var(--htb-primary-dark);
-  --secondary-color: var(--htb-secondary-dark);
-  --accent-color: var(--htb-accent-dark);
-  --card-bg: var(--htb-card-bg-dark);
-  --card-border: var(--htb-card-border-dark);
-  --sidebar-bg: var(--htb-secondary-dark);
-  --header-bg: var(--htb-card-bg-dark);
-  --input-bg: var(--htb-secondary-dark);
-  --input-border: var(--htb-card-border-dark);
-  --input-text: var(--htb-text-dark);
-  --btn-primary-bg: var(--htb-primary-dark);
-  --btn-primary-text: var(--htb-secondary-dark);
-  --btn-secondary-bg: var(--htb-secondary-dark);
-  --btn-secondary-text: var(--htb-text-dark);
-  --code-bg: var(--htb-secondary-dark);
-  --code-text: var(--htb-text-dark);
-  --hover-bg: var(--htb-secondary-dark);
+/* Tema oscuro - colores específicos */
+.dark-theme {
+  /* Colores primarios del tema oscuro */
+  --bg-primary: #004643;         /* Fondo principal verde oscuro */
+  --bg-secondary: #004643;       /* Fondo secundario verde oscuro */
+  --bg-card: #e8e4e6;            /* Fondo de la card gris claro */
+  --bg-sidebar: #abd1c6;         /* Fondo del sidebar verde menta */
+  
+  --text-primary: #abd1c6;       /* Color de párrafos verde menta */
+  --text-title: #fffffe;         /* Color de títulos blanco */
+  --text-light: #001e1d;         /* Texto del sidebar verde muy oscuro */
+  --text-button: #001e1d;        /* Texto del botón verde muy oscuro */
+  
+  --accent-color: #f9bc60;       /* Botón naranja/amarillo */
+  
+  --border-light: rgba(255, 255, 255, 0.1);
+  
+  --shadow-sm: none;             /* Sin sombras */
+  --shadow-md: none;             /* Sin sombras */
 }
 
-/* GitHub Theme */
-.github-theme {
-  --bg-color: var(--github-bg-dark);
-  --text-color: var(--github-text-dark);
-  --primary-color: var(--github-primary-dark);
-  --secondary-color: var(--github-secondary-dark);
-  --accent-color: var(--github-accent-dark);
-  --card-bg: var(--github-card-bg-dark);
-  --card-border: var(--github-card-border-dark);
-  --sidebar-bg: var(--github-secondary-dark);
-  --header-bg: var(--github-card-bg-dark);
-  --input-bg: var(--github-secondary-dark);
-  --input-border: var(--github-card-border-dark);
-  --input-text: var(--github-text-dark);
-  --btn-primary-bg: var(--github-primary-dark);
-  --btn-primary-text: #ffffff;
-  --btn-secondary-bg: var(--github-secondary-dark);
-  --btn-secondary-text: var(--github-text-dark);
-  --code-bg: var(--github-secondary-dark);
-  --code-text: var(--github-text-dark);
-  --hover-bg: var(--github-secondary-dark);
-}
-
-/* Discord Theme */
-.discord-theme {
-  --bg-color: var(--discord-bg-dark);
-  --text-color: var(--discord-text-dark);
-  --primary-color: var(--discord-primary-dark);
-  --secondary-color: var(--discord-secondary-dark);
-  --accent-color: var(--discord-primary-dark);
-  --card-bg: var(--discord-card-bg-dark);
-  --card-border: var(--discord-card-border-dark);
-  --sidebar-bg: var(--discord-secondary-dark);
-  --header-bg: var(--discord-bg-dark);
-  --input-bg: var(--discord-secondary-dark);
-  --input-border: var(--discord-card-border-dark);
-  --input-text: var(--discord-text-dark);
-  --btn-primary-bg: var(--discord-primary-dark);
-  --btn-primary-text: #ffffff;
-  --btn-secondary-bg: var(--discord-secondary-dark);
-  --btn-secondary-text: var(--discord-text-dark);
-  --code-bg: var(--discord-secondary-dark);
-  --code-text: var(--discord-text-dark);
-  --hover-bg: var(--discord-secondary-dark);
-}
-
-/* VS Code Theme */
-.vscode-theme {
-  --bg-color: var(--vscode-bg-dark);
-  --text-color: var(--vscode-text-dark);
-  --primary-color: var(--vscode-primary-dark);
-  --secondary-color: var(--vscode-secondary-dark);
-  --accent-color: var(--vscode-primary-dark);
-  --card-bg: var(--vscode-card-bg-dark);
-  --card-border: var(--vscode-card-border-dark);
-  --sidebar-bg: var(--vscode-secondary-dark);
-  --header-bg: var(--vscode-bg-dark);
-  --input-bg: var(--vscode-secondary-dark);
-  --input-border: var(--vscode-card-border-dark);
-  --input-text: var(--vscode-text-dark);
-  --btn-primary-bg: var(--vscode-primary-dark);
-  --btn-primary-text: #ffffff;
-  --btn-secondary-bg: var(--vscode-secondary-dark);
-  --btn-secondary-text: var(--vscode-text-dark);
-  --code-bg: var(--vscode-secondary-dark);
-  --code-text: var(--vscode-text-dark);
-  --hover-bg: var(--vscode-secondary-dark);
-}
-
-/* Aplicar estilos basados en las variables del tema actual */
+/* Estilos globales basados en variables de tema */
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: all 0.3s ease;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* El resto de estilos basados en variables como en theme.css */
+/* Aplicación de colores a elementos específicos */
+
+/* Títulos y encabezados */
+h1, h2, h3, h4, h5, h6,
+.text-title, 
+.intro-title,
+.form-title,
+.card-title {
+  color: var(--text-title);
+}
+
+/* Párrafos y texto normal */
+p, li, 
+.text-paragraph,
+.intro-subtitle,
+.feature-text,
+.form-label,
+.checkbox-label {
+  color: var(--text-primary);
+}
+
+/* Botones primarios */
+.btn-primary, 
+.btn-accent,
+.new-course-circle,
+.sidebar-toggle {
+  background-color: var(--accent-color);
+  color: var(--text-button);
+}
+
+/* Sidebar específicos */
+.sidebar {
+  background-color: var(--bg-sidebar);
+}
+
+/* Título principal CursoIA en modo oscuro */
+.dark-theme .curso-header h1 {
+  color: #fffffe;
+}
+
+
+/* Título de la card en modo oscuro */
+.dark-theme .form-card .form-title {
+  color: #001e1d;
+}
+
+.sidebar a,
+.sidebar .menu-text,
+.sidebar .user-name,
+.sidebar-title,
+.theme-toggle-btn {
+  color: var(--text-light);
+}
+
+.user-plan,
+.new-course-text {
+  color: var(--accent-color);
+}
+
+/* Corregir para el tema oscuro */
+.dark-theme .user-plan,
+.dark-theme .new-course-text {
+  color: #004643; /* Verde oscuro */
+}
+
+/* Card y formularios */
+.form-card,
+.card {
+  background-color: var(--bg-card);
+}
+

@@ -1,51 +1,63 @@
-.app-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+.layout-main {
+  flex: 1;
+  margin-left: 240px; /* Espacio para el sidebar */
+  padding: 0;
+  transition: margin-left var(--transition-speed) ease;
+  background-color: var(--bg-primary);
+}
+
+/* Cuando se oculta el sidebar */
+.layout-main.sidebar-hidden {
+  margin-left: 0;
+}
+
+/* Botón para mostrar/ocultar sidebar */
+/* Botón para mostrar/ocultar sidebar */
+.sidebar-toggle {
+  position: fixed;
+  left: 250px; /* Aumentado para dejar espacio entre el sidebar y el botón */
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-color);
+  color: var(--text-button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  transition: left var(--transition-speed) ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-toggle.sidebar-hidden {
+  left: 20px;
+}
+
+
+
+/* Media query para sidebar colapsado */
+@media (max-width: 768px) {
+  .layout-main {
+    margin-left: 60px;
   }
   
-  .main-container {
-    display: flex;
-    flex: 1;
+  .layout-main.sidebar-hidden {
+    margin-left: 0;
   }
   
-  .sidebar-container {
-    width: 260px;
-    transition: all 0.3s ease-in-out;
-    overflow: hidden;
+  .sidebar-toggle {
+    left: 60px;
   }
   
-  .sidebar-container.closed {
-    width: 0;
+  .sidebar-toggle.sidebar-hidden {
+    left: 20px;
   }
-  
-  .content-container {
-    flex: 1;
-    padding: 20px;
-    transition: all 0.3s ease-in-out;
-    overflow-y: auto;
-  }
-  
-  .content-container.with-sidebar {
-    width: calc(100% - 260px);
-  }
-  
-  .content-container.full-width {
-    width: 100%;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .sidebar-container.open {
-      position: fixed;
-      top: 56px; /* Navbar height */
-      left: 0;
-      bottom: 0;
-      z-index: 1030;
-      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    }
-    
-    .content-container.with-sidebar {
-      width: 100%;
-    }
-  }
+}

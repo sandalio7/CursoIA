@@ -1,42 +1,4 @@
-:root {
-  /* Tema oscuro - basado en la paleta chocolate */
-  --dark-background: #55423d; /* Fondo principal chocolate */
-  --dark-card-background: #55423d; /* Fondo de las tarjetas */
-  --dark-surface: #271c19; /* Superficie secundaria más oscura */
-  --dark-primary: #ffc0ad; /* Color primario/acento (salmon claro) */
-  --dark-secondary: #ffc0ad; /* Color secundario */
-  --dark-tertiary: #e78fb3; /* Color terciario (rosa) */
-  --dark-text-primary: #fffffe; /* Texto principal (blanco) */
-  --dark-text-secondary: #271c19; /* Texto secundario (chocolate oscuro) */
-  --dark-headline: #fffffe; /* Titulares */
-  --dark-paragraph: #fff3ec; /* Texto de párrafos */
-  --dark-stroke: #271c19; /* Contornos y divisores */
-  --dark-highlight: #e78fb3; /* Resaltados */
-  --dark-card-paragraph: #fff3ec; /* Texto en tarjetas */
-  --dark-card-headline: #fffffe; /* Títulos en tarjetas */
-  --dark-card-tag-bg: #271c19; /* Fondo de etiquetas en tarjetas */
-  --dark-card-tag-text: #fff3ec; /* Texto de etiquetas en tarjetas */
-  --dark-card-highlight: #e78fb3; /* Resaltado en tarjetas */
-  
-  /* Tema claro - invertimos algunos colores para buen contraste */
-  --light-background: #fffffe; /* Fondo principal claro */
-  --light-card-background: #fff3ec; /* Fondo de las tarjetas */
-  --light-surface: #ffc0ad; /* Superficie secundaria */
-  --light-primary: #55423d; /* Color primario/acento (chocolate) */
-  --light-secondary: #e78fb3; /* Color secundario (rosa) */
-  --light-tertiary: #ffc0ad; /* Color terciario (salmon) */
-  --light-text-primary: #271c19; /* Texto principal (chocolate oscuro) */
-  --light-text-secondary: #55423d; /* Texto secundario */
-  --light-headline: #271c19; /* Titulares */
-  --light-paragraph: #55423d; /* Texto de párrafos */
-  --light-stroke: #ffc0ad; /* Contornos y divisores */
-  --light-highlight: #e78fb3; /* Resaltados */
-  --light-card-paragraph: #55423d; /* Texto en tarjetas */
-  --light-card-headline: #271c19; /* Títulos en tarjetas */
-  --light-card-tag-bg: #fff3ec; /* Fondo de etiquetas en tarjetas */
-  --light-card-tag-text: #271c19; /* Texto de etiquetas en tarjetas */
-  --light-card-highlight: #e78fb3; /* Resaltado en tarjetas */
-}
+
 
 /* Aplicamos las variables según el tema */
 body {
@@ -47,23 +9,22 @@ body {
 
 /* Tema oscuro */
 .dark-theme {
-  --background: var(--dark-background);
-  --card-background: var(--dark-card-background);
-  --surface: var(--dark-surface);
-  --primary: var(--dark-primary);
-  --secondary: var(--dark-secondary);
-  --tertiary: var(--dark-tertiary);
-  --text-primary: var(--dark-text-primary);
-  --text-secondary: var(--dark-text-secondary);
-  --headline: var(--dark-headline);
-  --paragraph: var(--dark-paragraph);
-  --stroke: var(--dark-stroke);
-  --highlight: var(--dark-highlight);
-  --card-paragraph: var(--dark-card-paragraph);
-  --card-headline: var(--dark-headline);
-  --card-tag-bg: var(--dark-card-tag-bg);
-  --card-tag-text: var(--dark-card-tag-text);
-  --card-highlight: var(--dark-card-highlight);
+  --bg-primary: #004643;         /* Fondo principal */
+  --bg-secondary: #004643;       /* Fondo secundario */
+  --bg-card: #e8e4e6;            /* Fondo de la card */
+  --bg-sidebar: #abd1c6;         /* Fondo del sidebar */
+  
+  --text-primary: #abd1c6;       /* Color de párrafos */
+  --text-title: #fffffe;         /* Color de títulos */
+  --text-light: #001e1d;         /* Texto del sidebar */
+  
+  --accent-color: #f9bc60;       /* Botón amarillo cambia a este color */
+  --button-text: #001e1d;        /* Texto del botón */
+  
+  --border-light: rgba(255, 255, 255, 0.1);
+  
+  --shadow-sm: none;             /* Sin sombras */
+  --shadow-md: none;             /* Sin sombras */
 }
 
 /* Tema claro */

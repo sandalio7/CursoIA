@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { courseService } from '../services/api';
 import './HomePage.css';
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const [showNavbar, setShowNavbar] = useState(true);
   const [showOptions, setShowOptions] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -14,28 +13,6 @@ const HomePage = () => {
     learningGoal: '',
     additionalOptions: ''
   });
-
-  // Controlar la visibilidad del navbar al hacer scroll
-  useEffect(() => {
-    let lastScrollTop = 0;
-    
-    const handleScroll = () => {
-      const st = window.pageYOffset || document.documentElement.scrollTop;
-      if (st > lastScrollTop && st > 50) {
-        // Scroll hacia abajo
-        setShowNavbar(false);
-      } else {
-        // Scroll hacia arriba
-        setShowNavbar(true);
-      }
-      lastScrollTop = st <= 0 ? 0 : st;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,61 +45,42 @@ const HomePage = () => {
   };
 
   return (
-    <div className="homepage-container">
-      {/* Navbar */}
-      <header className={`home-navbar ${showNavbar ? 'visible' : 'hidden'}`}>
-        <div className="navbar-container">
-          <div className="navbar-logo">
-            <Link to="/">CursoIA</Link>
-          </div>
-          <div className="navbar-links">
-            <Link to="/dashboard">Dashboard</Link>
-            <Link to="/my-courses">Mis cursos</Link>
-          </div>
-          <div className="navbar-actions">
-            <button className="btn btn-upgrade">Mejora a Pro</button>
-            <div className="user-menu">
-              <span className="user-icon">
-                <i className="bi bi-person-circle"></i>
-              </span>
-              <span className="user-name">User - Usuario999</span>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Contenido principal */}
-      <main className="homepage-content">
+    <div className="home-page">
+      <div className="curso-header">
+        <h1 className="text-title">CursoIA</h1>
+      </div>
+      
+      <div className="home-content">
         {/* Sección izquierda - Copy */}
-        <section className="hero-section">
-          <h1 className="hero-title">Aprende lo que sea!</h1>
-          <p className="hero-subtitle">
-            Crea un curso interactivo para aprender un lenguaje, idioma,
+        <section className="intro-section">
+          <h2 className="intro-title">Aprende lo que sea!</h2>
+          <p className="intro-subtitle">
+            Crea un curso interactivo para aprender un lenguaje de programación, idioma, carreras...
           </p>
-          <ul className="hero-features">
+          <ul className="intro-features">
             <li>
-              <span className="check-circle"><i className="bi bi-check-circle-fill"></i></span>
-              Curso adaptado a la especialización que quieres aprender
+              <span className="check-icon">✓</span>
+              <span className="feature-text">Curso adaptado a la especialización que quieres aprender</span>
             </li>
             <li>
-              <span className="check-circle"><i className="bi bi-check-circle-fill"></i></span>
-              Test al final de cada lección para evaluar tus conocimientos
+              <span className="check-icon">✓</span>
+              <span className="feature-text">Test al final de cada lección para evaluar tus conocimientos</span>
             </li>
             <li>
-              <span className="check-circle"><i className="bi bi-check-circle-fill"></i></span>
-              Proyecto al final de cada módulo con feedback instantáneo sobre tus errores
+              <span className="check-icon">✓</span>
+              <span className="feature-text">Proyecto al final de cada módulo con feedback instantáneo sobre tus errores</span>
             </li>
           </ul>
-          <button className="btn btn-cta">Mejora a Pro</button>
+          <button className="btn btn-primary">Mejora a Pro</button>
         </section>
 
         {/* Sección derecha - Formulario */}
-        <section className="course-form-section">
-          <div className="course-form-container course-form-pink">
+        <section className="form-section">
+          <div className="form-card">
             <h2 className="form-title">Crear Curso</h2>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="topic">Qué quieres aprender:</label>
+                <label htmlFor="topic" className="form-label">Que quieres aprender:</label>
                 <input
                   type="text"
                   id="topic"
@@ -131,24 +89,25 @@ const HomePage = () => {
                   onChange={handleChange}
                   placeholder="quiero aprender python"
                   required
-                  className="form-input"
+                  className="form-control"
                 />
               </div>
 
-              <div className="form-group form-checkbox">
+              <div className="form-group checkbox-group">
                 <input
                   type="checkbox"
                   id="showOptions"
                   checked={showOptions}
                   onChange={() => setShowOptions(!showOptions)}
+                  className="form-checkbox"
                 />
-                <label htmlFor="showOptions">Más Opciones</label>
+                <label htmlFor="showOptions" className="checkbox-label">Mas Opciones</label>
               </div>
 
               {showOptions && (
                 <div className="additional-options">
                   <div className="form-group">
-                    <label htmlFor="userProfile">Cuáles son tus conocimientos sobre el tema?</label>
+                    <label htmlFor="userProfile" className="form-label">Cuáles son tus conocimientos sobre el tema?</label>
                     <input
                       type="text"
                       id="userProfile"
@@ -156,12 +115,12 @@ const HomePage = () => {
                       value={formData.userProfile}
                       onChange={handleChange}
                       placeholder="Describe tu nivel actual y experiencia"
-                      className="form-input"
+                      className="form-control"
                     />
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="learningGoal">En qué quieres aplicar estos conocimientos?</label>
+                    <label htmlFor="learningGoal" className="form-label">En qué quieres aplicar estos conocimientos?</label>
                     <input
                       type="text"
                       id="learningGoal"
@@ -169,12 +128,12 @@ const HomePage = () => {
                       value={formData.learningGoal}
                       onChange={handleChange}
                       placeholder="Cuál es tu objetivo de aprendizaje"
-                      className="form-input"
+                      className="form-control"
                     />
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="additionalOptions">Opciones adicionales:</label>
+                    <label htmlFor="additionalOptions" className="form-label">Opciones adicionales:</label>
                     <input
                       type="text"
                       id="additionalOptions"
@@ -182,19 +141,23 @@ const HomePage = () => {
                       value={formData.additionalOptions}
                       onChange={handleChange}
                       placeholder="Cualquier otra especificación para tu curso"
-                      className="form-input"
+                      className="form-control"
                     />
                   </div>
                 </div>
               )}
 
-              <button type="submit" className="btn btn-submit" disabled={isLoading}>
+              <button 
+                type="submit" 
+                className="btn btn-primary btn-block" 
+                disabled={isLoading}
+              >
                 {isLoading ? 'Generando Curso...' : 'Generar Curso'}
               </button>
             </form>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 };
